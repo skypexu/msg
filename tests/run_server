@@ -1,0 +1,2 @@
+#!/bin/sh
+export MSGR_MESSAGE_TRACK=1; export MSGR_CONNECTION_TRACK=1;./server

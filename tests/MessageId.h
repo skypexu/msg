@@ -1,0 +1,8 @@
+#ifndef MESSAGE_ID_877f61b495de_H
+#define MESSAGE_ID_877f61b495de_H
+
+#define TEST_MSG_BASE       1000
+#define TEST_MSG_PING       (TEST_MSG_BASE+1)
+#define TEST_MSG_COMMAND    (TEST_MSG_BASE+2)
+
+#endif // MESSAGE_ID_877f61b495de_H

@@ -1,0 +1,7 @@
+#ifndef POLAR_ACCONFIG_H
+#define POLAR_ACCONFIG_H
+
+#cmakedefine POLAR_HAVE_GOOD_YASM_ELF64 1
+#cmakedefine POLAR_HAVE_SPLICE          1
+
+#endif
