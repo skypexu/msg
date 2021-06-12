@@ -507,6 +507,14 @@ AsyncMessenger::~AsyncMessenger()
 void AsyncMessenger::ready()
 {
   ldout(cct,10) << __func__ << " " << get_myaddr() << dendl;
+  dispatch_queue.start();
+
+  lock.Lock();
+  if (did_bind) {
+      Worker *w = pool->get_worker();
+      processor.start(w);
+  }
+  lock.Unlock();
 }
 
 int AsyncMessenger::shutdown()
@@ -589,10 +597,10 @@ int AsyncMessenger::start()
     my_inst.addr.nonce = nonce;
     init_local_connection();
   } else {
-    Worker *w = pool->get_worker();
-    processor.start(w);
+  //  Worker *w = pool->get_worker();
+  //  processor.start(w);
   }
-  dispatch_queue.start();
+//  dispatch_queue.start();
   return 0;
 }
 

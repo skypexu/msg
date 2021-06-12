@@ -1848,7 +1848,7 @@ int AsyncConnection::handle_connect_msg(msgr_msg_connect &connect, bufferlist &a
   }
 
   // notify
-  if (!replacing && ! queue_reset) {
+  if ((!replacing || replacing == 2) && ! queue_reset) {
      queue_reset = true;
      Mutex::Unlocker unlocker(lock);
      in_q->queue_accept(this);
