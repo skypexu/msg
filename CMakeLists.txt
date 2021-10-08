@@ -35,10 +35,11 @@ set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} ${PROJECT_CXX_FLAGS})
 
 find_path(LIBEV_INC_DIR ev.h HINTS /usr/local/include)                    
 find_file(LIBEV libev.a /usr/local/lib)
+set(LIBEV libev.a)
 
-if (NOT LIBEV)
-    message(FATAL_ERROR "libev.a not found")
-endif()
+#if (NOT LIBEV)
+#    message(FATAL_ERROR "libev.a not found")
+#endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
