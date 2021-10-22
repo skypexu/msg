@@ -119,7 +119,7 @@ void NetHandler::set_socket_options(int sd, int prio)
     // We need to call setsockopt(SO_PRIORITY) after it.
     r = ::setsockopt(sd, SOL_SOCKET, SO_PRIORITY, &prio, sizeof(prio));
     if (r < 0) {
-      ldout(cct,0) << "couldn't set SO_PRIORITY to " << prio
+      ldout(cct, 5) << "couldn't set SO_PRIORITY to " << prio
                    << ": " << cpp_strerror(errno) << dendl;
     }
   }
